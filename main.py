@@ -16,7 +16,7 @@ def start(message):
     btn4 = types.KeyboardButton('Беларусь')
     markup.add(btn1, btn2, btn3, btn4)
     
-    send_message = f"<b>Привет, {message.from_user.first_name}!</b>\nЧтобы узнать как польщоваться ботом введи /help"
+    send_message = f"<b>Привет, {message.from_user.first_name}!</b>\nЧтобы узнать как пользоваться ботом, введи /help"
     bot.send_message(message.chat.id, send_message, parse_mode='html', reply_markup=markup)
 
 
@@ -34,7 +34,7 @@ def get_text_messages(message):
         keyboard.add(key_cov)
         key_sim = types.InlineKeyboardButton(text='Симптомы', callback_data='sim')
         keyboard.add(key_sim)
-        key_seb = types.InlineKeyboardButton(text='Если зпметили симптомы у себя', callback_data='seb')
+        key_seb = types.InlineKeyboardButton(text='Если заметили симптомы у себя', callback_data='seb')
         keyboard.add(key_seb)
         key_mif = types.InlineKeyboardButton(text='Мифы о короновирусе', callback_data='mif')
         keyboard.add(key_mif)
@@ -43,12 +43,12 @@ def get_text_messages(message):
     elif get_messge_bot == "/help":
         bot.send_message(message.from_user.id, """Привет, я могу рассказать тебе информацию о COVID-19 или показать статистику заболевания.
 
-Для того чтобы узнать информацию о COVID напиши сообщение "Информация" или команду /info 
+Для того чтобы узнать информацию о COVID, напиши сообщение "Информация" или команду /info 
 
-Если хочешь узнать статитсттку то можешь написать "Статистика" или ввести команду
+Если хочешь узнать статистику, то можешь написать "Статистика" или ввести команду
 /stat """)
     elif get_messge_bot == "/stat":
-        bot.send_message(message.from_user.id, """Чтобы узнать данные про коронавируса напишите название страны, например: США, Украина, Россия и так далее""")
+        bot.send_message(message.from_user.id, """Чтобы узнать данные про коронавируса,пше  напишите название страны, например: США, Украина, Россия и так далее""")
     elif get_messge_bot == 'сша':
         location = covid19.getLocationByCountryCode("US")
         k = 1
