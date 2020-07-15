@@ -1,0 +1,4 @@
+pyTelegramBotAPI version 3.7.2
+requests version 2.7.0
+telebot~=0.0.3
+COVID19Py~=0.3.0
